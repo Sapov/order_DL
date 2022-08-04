@@ -18,10 +18,10 @@ for i in range(len(files_downloads)-1):
         print(files_downloads[i], "This's JPG")
         shutil.move(target_path + "\\" + files_downloads[i], target_path + "\\" + 'Picturies')
         print(target_path + "\\" + files_downloads[i])
-    elif files_downloads[i][-3:] == 'pdf':
-        print(files_downloads[i], "This's PDF")
+    elif files_downloads[i].endswith('.pdf'):
+        print(files_downloads[i], "<== This's PDF")
         shutil.move(target_path + "\\" + files_downloads[i], target_path + "\\" + 'PDF')
-    elif files_downloads[i][-4:] == 'docx' or files_downloads[i][-3:] == 'xlsx':
+    elif files_downloads[i][-4:] == 'docx' or files_downloads[i].endswith('.xlsx'):
         print(files_downloads[i], "This's DOC")
         shutil.move(target_path + "\\" + files_downloads[i], target_path + "\\" + 'Docs')
     elif files_downloads[i][-3:] == 'zip' or files_downloads[i][-3:] == 'rar':
