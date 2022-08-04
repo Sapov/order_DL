@@ -1,7 +1,9 @@
-import shutil,os
+import shutil, os
 from pathlib import Path
 p = Path.home()
-target_path = "C:\\Users\\sasha\\Downloads"
+target_path = str(p) + '\\Downloads'
+print(target_path)
+
 files_downloads = os.listdir(target_path)
 dir_name = ['PDF', 'Programs','Picturies', 'Docs','Arhivs', "Corel_makets", 'Video']
 for i in range(len(dir_name)): # проверяем ессть ли каталог нет создаем
