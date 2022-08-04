@@ -1,14 +1,15 @@
-import shutil, os
+import shutil
+import os
 from pathlib import Path
 p = Path.home()
-target_path = str(p) + '\\Downloads'
+target_path = str(p) + '\\Downloads\\Telegram Desktop'
 print(target_path)
 
 files_downloads = os.listdir(target_path)
-dir_name = ['PDF', 'Programs','Picturies', 'Docs','Arhivs', "Corel_makets", 'Video']
-for i in range(len(dir_name)): # проверяем ессть ли каталог нет создаем
-    if os.path.exists(target_path + '\\' + dir_name[i]) == False:
-        os.mkdir(target_path + '\\' + dir_name[i])# Создаем папкИ
+dir_name = ['PDF', 'Programs', 'Picturies', 'Docs', 'Arhivs', "Corel_makets", 'Video']
+for i in range(len(dir_name)):  # проверяем ессть ли каталог нет создаем
+    if not os.path.exists(target_path + '\\' + dir_name[i]):
+        os.mkdir(target_path + '\\' + dir_name[i])  # Создаем папкИ
 
 
 for i in range(len(files_downloads)-1):
@@ -40,10 +41,3 @@ for i in range(len(files_downloads)-1):
         print(files_downloads[i], "<== This's Trash")
         # shutil.move(target_path + "\\" + files_downloads[i], target_path + "\\" + 'Video')
         os.remove(os.path.join(target_path + "\\", files_downloads[i]))
-
-
-
-
-
-# shutil.copy(files_downloads[0], "some_folder")
-
