@@ -3,7 +3,6 @@ import os
 from pathlib import Path
 p = Path.home()
 target_path = str(p) + '\\Downloads'
-print(target_path)
 
 files_downloads = os.listdir(target_path)
 dir_name = ['PDF', 'Programs', 'Picturies', 'Docs', 'Arhivs', "Corel_makets", 'Video']
@@ -28,7 +27,7 @@ for i in range(len(files_downloads)-1):
     elif files_downloads[i][-3:] == 'zip' or files_downloads[i][-3:] == 'rar':
         print(files_downloads[i], "This's ARH")
         shutil.move(target_path + "\\" + files_downloads[i], target_path + "\\" + 'Arhivs')
-    elif files_downloads[i][-3:] == 'exe' or files_downloads[i][-3:] == 'msi':
+    elif files_downloads[i][-3:] == 'exe' or files_downloads[i][-3:] == 'msi' or files_downloads[i][-3:] == 'apk':
         print(files_downloads[i], "This's Proga")
         shutil.move(target_path + "\\" + files_downloads[i], target_path + "\\" + 'Programs')
     elif files_downloads[i][-3:] == 'cdr':
