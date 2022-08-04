@@ -2,7 +2,7 @@ import shutil
 import os
 from pathlib import Path
 p = Path.home()
-target_path = str(p) + '\\Downloads\\Telegram Desktop'
+target_path = str(p) + '\\Downloads'
 print(target_path)
 
 files_downloads = os.listdir(target_path)
